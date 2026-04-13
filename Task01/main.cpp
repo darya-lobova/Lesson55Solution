@@ -1,27 +1,23 @@
 #include "logic.h"
 
 int main() {
-	const int length = 10;
+	int classes[DEFAULT_SIZE][DEFAULT_SIZE];
 
-	int classA[DEFAULT_SIZE];
-	int classB[DEFAULT_SIZE];
-	int classC[DEFAULT_SIZE];
+	int number_of_classes;
+	int number_of_students;
 
-	int size;
+	cout << "Input number of classes: ";
+	cin >> number_of_classes;
 
 	cout << "Input number of students: ";
-	cin >> size;
+	cin >> number_of_students;
 
-	init_marks(classA, size);
-	init_marks(classB, size);
-	init_marks(classC, size);
+	init_marks(classes, number_of_classes, number_of_students);
 
-	string best_class = find_best_class(classA, classB, classC, length);
+	cout <<  convert(classes, number_of_classes, number_of_students) << endl;
+	
+	string best_class = find_best_class(classes, number_of_classes, number_of_students);
 
-	cout << "Class A marks: " << convert(classA, size) << endl;
-	cout << "Class B marks: " << convert(classB, size) << endl;
-	cout << "Class C marks: " << convert(classC, size) << endl;
-		
 	cout << "Best class is " << best_class << ".\n";
 
 	return 0;

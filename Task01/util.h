@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
+#define DEFAULT_SIZE 30
 
-#define DEFAULT_SIZE 100
 using namespace std;
 
-void init_marks(int marks[], int size);
-string convert(int marks[], int size);
+void init_marks(int marks[DEFAULT_SIZE][DEFAULT_SIZE], int n, int m);
+string convert(int marks[DEFAULT_SIZE][DEFAULT_SIZE], int n, int m);
